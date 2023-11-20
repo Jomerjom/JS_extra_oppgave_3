@@ -1,27 +1,58 @@
+// Copy paste teksten inn i en js fil. Lever oppgaven med link til repoet og link til aktiv side
+
+
 /*
 1.
 
 Use string methods on the text variable to do the following:
- - Replace the word 'hard' with 'fun'
- - Remove the whitespace from the beginning and end of the string
- - Split the string into an array where each word is an element
+ 1.1 - Replace the word 'hard' with 'fun'
+ 1.2 - Remove the whitespace from the beginning and end of the string
+ 1.3 - Split the string into an array where each word is an element
 
  Console log each method used.
 */
+let text = "       Javascript is hard    ";
+//! Code 1.1 below
+text = text.replace("hard", "fun");
+console.log(text);
 
-//! Code here
+//! Code 1.2 below
+text = text.trim();
+console.log(text);
+
+//! Code 1.3 below
+text = text.split(" ");
+console.log(text);
 
 /*
 2.
 
 Use array methods to do the following:
- - Add a new hero to the end of the array
- - Remove the first hero of the array (Spider-Man)
- - Replace "Doctor Strange" with "Thanos"
- - Use the splice method to remove Thor and Hulk and add "Captain America"
+ 2.1 - Add a new hero to the end of the array
+ 2.2 - Remove the first hero of the array (Spider-Man)
+ 2.3 - Replace "Doctor Strange" with "Thanos"
+ 2.4 - Use the splice method to remove Thor and Hulk and add "Captain America"
 */
+let heroes = ["Spider-Man", "Iron Man", "Doctor Strange", "Thor", "Hulk"];
 
-//! Code here
+
+//! Code 2.1 below
+heroes.push("Batman");
+console.log(heroes);
+
+//! Code 2.2 below
+heroes.shift();
+console.log(heroes);
+
+//! Code 2.3 below
+heroes[1] = "Thanos";
+console.log(heroes);
+
+//! Code 2.4 below
+heroes.splice(2, 2, "Captain America");
+console.log(heroes);
+
+
 
 /*
 3.
@@ -36,6 +67,10 @@ Console log the function a few times to show that it's working.
 */
 
 //! Code here
+function upperCase(string) {
+  return `${string.toUpperCase()}!`;
+}
+console.log(upperCase("this is cool"));
 
 /*
 4.
@@ -50,6 +85,12 @@ Console log the function a few times to show that it's working
 */
 
 //! Code here
+const removeFirstAndLast = (array) => {
+  array.shift();
+  array.pop();
+  return array
+};
+console.log(removeFirstAndLast(["Red", "Green", "Blue", "Yellow"]));
 
 /*
 5.
@@ -71,3 +112,7 @@ console.log(yourFunction(["Red", "Green", "Blue"], "Green")) --> ["Red", "Blue"]
 */
 
 //! Code here
+const checkArray = (array, string) => array.includes(string) ? array.filter(item => item !== string) : [...array, string];
+
+console.log(checkArray(["Red", "Green"], "Blue"));
+console.log(checkArray(["Red", "Green", "Blue"], "Green"));
